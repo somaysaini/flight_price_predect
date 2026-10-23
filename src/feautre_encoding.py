@@ -1,13 +1,16 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, MinMaxScaler
 
+DEFAULT_PATH = Path(__file__).resolve().parent.parent / "clean_notebook" / "clean_flight.csv"
+
 class FlightData:
-    def __init__(self, file_path="clean_flights.csv"):
+    def __init__(self, file_path=DEFAULT_PATH):
         # 1. Data load
-        df = pd.read_csv(r'C:\Users\somay\OneDrive\Desktop\solar-power_predection\clean_notebook\clean_flight.csv')
+        df = pd.read_csv(r'clean_notebook/clean_flight.csv')
         df = df.drop(columns=["Unnamed: 0", "flight"], errors="ignore")
         
         # 2. x aur y alag

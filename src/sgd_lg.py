@@ -67,7 +67,7 @@ class SGDRegressor:
 
     # def predict(self,X_test):
     #     return np.dot(X_test,self.coef_) + self.intercept_
-sgd = SGDRegressor(learning_rate=0.01,epochs=2500)
+sgd = SGDRegressor(learning_rate=0.01,epochs=50)
 
 
 start = time.time()
